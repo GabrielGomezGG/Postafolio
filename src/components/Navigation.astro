@@ -1,18 +1,33 @@
 ---
 import ButtonNier from "./ButtonNier.astro";
-
 ---
-<div class="navigation">
+
+<div class="nav-links">
     <a href="/"><ButtonNier text="Inicio" /></a>
-    <a href="/proyectos"><ButtonNier text="Proyectos"/></a>
-    <a href="/sobremi"><ButtonNier text="Sobre mi"/></a>
-    <a href="/habilidades"><ButtonNier text="Habilidades"/></a>
+    <a href="/proyectos"><ButtonNier text="Proyectos" /></a>
+    <a href="/sobremi"><ButtonNier text="Sobre mi" /></a>
+    <a href="/habilidades"><ButtonNier text="Habilidades" /></a>
 </div>
 
 <style>
-
-    a{
-        text-decoration: none;
+    a {
+        /* text-decoration: none; */
     }
 
+    .nav-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        list-style: none;
+        row-gap: 1rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+            grid-template-rows: 1fr;
+        }
+    }
 </style>

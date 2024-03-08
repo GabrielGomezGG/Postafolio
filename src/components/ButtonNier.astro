@@ -21,6 +21,7 @@ const { text } = Astro.props;
         border-left: none;
         border-right: none;
         margin: 0.5rem;
+        width: 5em;
 
         &::before {
             content: "";
@@ -46,7 +47,8 @@ const { text } = Astro.props;
         }
 
         &:hover,
-        &:focus {
+        &:focus 
+        {
             background-color: transparent;
             color: $bgColor;
             border-color: $color;
