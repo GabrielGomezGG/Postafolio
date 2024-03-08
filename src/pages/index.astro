@@ -1,24 +1,61 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ButtonNier from "../components/ButtonNier.astro";
+import Content from "../components/Content.astro";
+import Title from "../components/Title.astro";
 
-const pageTitle = "Página de inicio";
+const pageTitle = "Gabriel Gomez";
+const rol = "Desarrollador Android";
+const body1 =
+    "Con más de dos años de experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin y Android SDK, así como habilidades en el backend con Java y Spring Boot.";
+const body2 =
+    "Actualmente, me encuentro finalizando la Tecnicatura en Desarrollo de Aplicaciones Móviles en la Universidad Nacional de La Matanza (UNLaM).";
+
+const contact = ["Linkedin", "Github", "Email", "CV"];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <main>
-        <div class="container">
-            <h1>
-                <span>Gabriel Gomez</span>
-                <br />
-                <small> Desarrollador Android</small>
-            </h1>
-            <div class="content">
-                <p>lorem</p>
-
-                <ButtonNier text="Titi" />
-                <h1>ASDASDSA <span>KKKKKKASd</span></h1>
+<BaseLayout>
+    <Title pageTitle={pageTitle} rol={rol} />
+    <Content>
+        <div class="main">
+            <p>{body1 + "\n" + body2}</p>
+            <img src="/favicon.svg" alt="Profile" />
+            <div class="contacts">
+                {
+                    contact.map((item, index) => {
+                        return <ButtonNier text={item} />;
+                    })
+                }
             </div>
         </div>
-    </main>
+    </Content>
 </BaseLayout>
+
+<style>
+    .main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
+        margin-left: 16px;
+        margin-right: 16px;
+
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+        justify-self: center;
+    }
+
+    @media (min-width: 1024px) {
+        .main {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
+
+        .contacts {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+</style>
