@@ -1,19 +1,23 @@
 ---
 import ButtonNier from "./ButtonNier.astro";
+
+const links = [
+    { href: "/", text: "Inicio" },
+    { href: "/proyectos", text: "Proyectos" },
+    { href: "/sobremi", text: "Sobre mi" },
+    { href: "/habilidades", text: "Habilidades" },
+];
 ---
 
 <div class="nav-links">
-    <a href="/"><ButtonNier text="Inicio" /></a>
-    <a href="/proyectos"><ButtonNier text="Proyectos" /></a>
-    <a href="/sobremi"><ButtonNier text="Sobre mi" /></a>
-    <a href="/habilidades"><ButtonNier text="Habilidades" /></a>
+    {
+        links.map((link) => (
+            <a href={link.href}><ButtonNier text={link.text} /></a>
+        ))
+    }
 </div>
 
 <style>
-    a {
-        /* text-decoration: none; */
-    }
-
     .nav-links {
         display: grid;
         grid-template-columns: 1fr 1fr;

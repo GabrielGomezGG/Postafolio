@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ButtonNier from "../components/ButtonNier.astro";
+import Contact from "../components/Contact.astro";
 import Content from "../components/Content.astro";
 import Title from "../components/Title.astro";
 
@@ -20,13 +20,14 @@ const contact = ["Linkedin", "Github", "Email", "CV"];
         <div class="main">
             <p>{body1 + "\n" + body2}</p>
             <img src="/favicon.svg" alt="Profile" />
-            <div class="contacts">
-                {
+            
+                <!-- {
                     contact.map((item, index) => {
                         return <ButtonNier text={item} />;
                     })
-                }
-            </div>
+                } -->
+                <Contact />
+            
         </div>
     </Content>
 </BaseLayout>
@@ -50,12 +51,6 @@ const contact = ["Linkedin", "Github", "Email", "CV"];
     @media (min-width: 1024px) {
         .main {
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        }
-
-        .contacts {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
         }
     }
 </style>

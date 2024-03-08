@@ -1,0 +1,31 @@
+---
+import Social from "./Social.astro";
+import ButtonNier from "./ButtonNier.astro";
+
+const contact = [
+    { platform: "Linkedin", username: "in/gabrielgomezgg/" },
+    { platform: "Github", username: "gabrielgomezgg" },
+    { platform: "mailto:gabrielgomezgg1997@gmail.com", username: "Email" },
+];
+---
+
+<div class="contacts">
+    {
+        contact.map((item) => {
+            return <Social platform={item.platform} username={item.username} />;
+        })
+    }
+    <a href="/gabrielgomezcv.pdf" download="gabrielgomezcv.pdf" }>
+        <ButtonNier text={"CV"} />
+    </a>
+</div>
+
+<style>
+    @media (min-width: 1024px) {
+        .contacts {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+</style>

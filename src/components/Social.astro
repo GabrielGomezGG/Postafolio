@@ -1,0 +1,25 @@
+---
+import ButtonNier from "./ButtonNier.astro";
+
+interface Props {
+  platform: string;
+  username: string;
+}
+
+const { platform, username } = Astro.props;
+
+const url = "https://www.${platform}.com/${username}"
+---
+
+<!-- <a href={`https://www.${platform}.com/${username}`}>{platform}</a> -->
+{username.length < 6 ? 
+  <a href={platform}>
+    <ButtonNier text={username} />
+  </a> 
+  :
+  <a href={`https://www.${platform}.com/${username}`}>
+    <ButtonNier text={platform} />
+  </a>
+}
+
+
