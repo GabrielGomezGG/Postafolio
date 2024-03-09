@@ -18,16 +18,11 @@ const contact = ["Linkedin", "Github", "Email", "CV"];
     <Title pageTitle={pageTitle} rol={rol} />
     <Content>
         <div class="main">
+            
             <p>{body1 + "\n" + body2}</p>
             <img src="/favicon.svg" alt="Profile" />
-            
-                <!-- {
-                    contact.map((item, index) => {
-                        return <ButtonNier text={item} />;
-                    })
-                } -->
-                <Contact />
-            
+
+            <Contact />
         </div>
     </Content>
 </BaseLayout>
@@ -39,7 +34,6 @@ const contact = ["Linkedin", "Github", "Email", "CV"];
         gap: 10px;
         margin-left: 16px;
         margin-right: 16px;
-
     }
 
     img {
