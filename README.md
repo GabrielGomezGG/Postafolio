@@ -1,3 +1,4 @@
 ## Portafolio
 
-Voy a estar creando mi portafolio con Astro.
+Ya subí mi portafolio a la web: (todavía en construcción)
+[Gabriel Gomez Portafolio](https://gabrielgomezgg.netlify.app/) 
