@@ -1,6 +1,8 @@
 ---
 import ButtonNier from "./ButtonNier.astro";
 
+const buttonSize = "5em";
+
 const links = [
     { href: "/", text: "Inicio" },
     { href: "/proyectos", text: "Proyectos" },
@@ -12,7 +14,7 @@ const links = [
 <div class="nav-links">
     {
         links.map((link) => (
-            <a href={link.href}><ButtonNier text={link.text} /></a>
+            <a href={link.href}><ButtonNier text={link.text} size={buttonSize} /></a>
         ))
     }
 </div>

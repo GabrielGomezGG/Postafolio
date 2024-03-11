@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ButtonNier from "../components/ButtonNier.astro";
+
+
+const title = "Sobre mi";
+const subtitle = "";
+const buttonSize = "85%"
+
+const items = ["¿Quién soy?", "Experiencia", "Estudios"];
+---
+
+<BaseLayout title={title} subtitle={subtitle}>
+    
+        <div class="main">
+            <div class="buttons_column">
+                {
+                    items.map( item => {
+                        return <ButtonNier text={item} size={buttonSize}></ButtonNier>
+                    })
+                }
+            </div>
+            <div class="text_content"></div>
+        </div>
+    
+</BaseLayout>
+
+<style>
+    
+    .buttons_column{
+        display:flex;
+        flex-direction: column;
+        /* background-color: green; */
+        align-items: center;
+    }
+
+    .text_content{
+        width: 90%;
+        height: 50vh;
+        background-color: red;
+        justify-self: center;
+        margin: 0px 16px 16px 16px;
+    }
+
+     .main {
+        /* background-color: yellow; */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        
+        
+    }
+
+    @media (min-width: 1024px) {
+        .main {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
+    } 
+</style>

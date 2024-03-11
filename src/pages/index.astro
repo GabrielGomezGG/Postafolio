@@ -5,7 +5,7 @@ import Content from "../components/Content.astro";
 import Title from "../components/Title.astro";
 
 const pageTitle = "Gabriel Gomez";
-const rol = "Desarrollador Android";
+const rol = "- Desarrollador Android";
 const body1 =
     "Con más de dos años de experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin y Android SDK, así como habilidades en el backend con Java y Spring Boot.";
 const body2 =
@@ -14,9 +14,8 @@ const body2 =
 const contact = ["Linkedin", "Github", "Email", "CV"];
 ---
 
-<BaseLayout>
-    <Title pageTitle={pageTitle} rol={rol} />
-    <Content>
+<BaseLayout title={pageTitle} subtitle={rol}>
+    
         <div class="main">
             
             <p>{body1 + "\n" + body2}</p>
@@ -24,7 +23,6 @@ const contact = ["Linkedin", "Github", "Email", "CV"];
 
             <Contact />
         </div>
-    </Content>
 </BaseLayout>
 
 <style>

@@ -1,8 +1,10 @@
 ---
 import Header from "../components/Header.astro";
 import Pattern from "../components/Pattern.astro";
+import Content from "../components/Content.astro";
+import Title from "../components/Title.astro";
 
-// const {pageTitle} = Astro.props;
+const {title, subtitle} = Astro.props;
 const pageTitle = "Gabriel Gomez";
 ---
 
@@ -17,7 +19,10 @@ const pageTitle = "Gabriel Gomez";
 	<body>
 		<Header />
 		<main>
-			<slot />
+			<Title title={title} subtitle={subtitle} />
+			<Content>
+				<slot />
+			</Content>
 		</main>
 		<Pattern />
 	</body>
@@ -33,8 +38,8 @@ const pageTitle = "Gabriel Gomez";
 		outline: none !important;
 	}
 
-	a{
-		text-decoration: none;	
+	a {
+		text-decoration: none;
 	}
 
 	body {
@@ -76,7 +81,7 @@ const pageTitle = "Gabriel Gomez";
 	}
 	small {
 		&::before {
-			content: "–";
+			content: "";
 		}
 		font-weight: 500;
 		letter-spacing: $letterSpacing;
@@ -106,7 +111,7 @@ const pageTitle = "Gabriel Gomez";
 		box-shadow: $boxShadow;
 	}
 
-	.title{
+	.title {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -116,7 +121,7 @@ const pageTitle = "Gabriel Gomez";
 		body {
 			padding-inline: 3rem;
 		}
-		.title{
+		.title {
 			flex-direction: row;
 		}
 	}
@@ -124,6 +129,5 @@ const pageTitle = "Gabriel Gomez";
 		body {
 			padding-inline: 10rem;
 		}
-		
 	}
 </style>
