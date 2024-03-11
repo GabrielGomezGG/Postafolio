@@ -1,15 +1,21 @@
 ---
-const { text, size } = Astro.props;
+const { text, size, className } = Astro.props;
 
 const buttonSize = size 
 
 ---
 
-<button type="button">{text}</button>
+<button type="button" class={className}>{text}</button>
 
 <style lang="scss" define:vars={{buttonSize}}>
     $bgColor: #c8c2aa;
     $color: #4d493e;
+
+    .one:hover{
+        .two{
+            background-color: red;
+        }
+    }
 
     button {
         cursor: pointer;

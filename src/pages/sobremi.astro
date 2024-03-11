@@ -2,57 +2,84 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ButtonNier from "../components/ButtonNier.astro";
 
-
 const title = "Sobre mi";
 const subtitle = "";
-const buttonSize = "85%"
+const buttonSize = "85%";
 
-const items = ["¿Quién soy?", "Experiencia", "Estudios"];
+const items = [
+    { title: "", body: "", className: "zero" },
+    { title: "¿Quién soy?", body: "Lorem", className: "one" },
+    { title: "Experiencia", body: "Lorem", className: "two" },
+    { title: "Estudios", body: "Lorem", className: "three" },
+];
+
+var positionItem = 0;
+
+const primary = "#4d493e";
+const onPrimary = "#c8c2aa";
 ---
 
 <BaseLayout title={title} subtitle={subtitle}>
-    
-        <div class="main">
-            <div class="buttons_column">
-                {
-                    items.map( item => {
-                        return <ButtonNier text={item} size={buttonSize}></ButtonNier>
-                    })
-                }
-            </div>
-            <div class="text_content"></div>
+    <div class="main">
+        <div class="buttons_column">
+            {
+                items.map((item) => {
+                    return (
+                        item.title.length > 0 && (
+                            <ButtonNier text={item.title} size={buttonSize} className={item.className} />
+                        )
+                    );
+                })
+            }
         </div>
-    
+        <div class="text_content">
+            <h3>{items[positionItem].title}</h3>
+            <p>{items[positionItem].body}</p>
+        </div>
+    </div>
 </BaseLayout>
 
-<style>
-    
-    .buttons_column{
-        display:flex;
+<style define:vars={{ primary, onPrimary }}>
+    .buttons_column {
+        display: flex;
         flex-direction: column;
         /* background-color: green; */
         align-items: center;
     }
 
-    .text_content{
+    
+
+    .text_content {
         width: 90%;
         height: 50vh;
-        background-color: red;
+        /* background-color: #cdcaa8; */
+        border: 2px solid var(--primary);
         justify-self: center;
-        margin: 0px 16px 16px 16px;
+        /* margin: 0px 16px 16px 16px; */
+
+        h3 {
+            margin: 0;
+            padding: 8px 0px 8px 8px;
+            background-color: var(--primary);
+            color: var(--onPrimary);
+            min-height: 22px;
+        }
+
+        p {
+            margin: 8px;
+            color: var(--primary);
+        }
     }
 
-     .main {
+    .main {
         /* background-color: yellow; */
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        
-        
     }
 
     @media (min-width: 1024px) {
         .main {
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         }
-    } 
+    }
 </style>
