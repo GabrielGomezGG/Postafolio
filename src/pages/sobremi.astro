@@ -2,44 +2,53 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ButtonNier from "../components/ButtonNier.astro";
 
+import AboutmeContent from "../components/AboutmeContent.jsx";
+
+
 const title = "Sobre mi";
 const subtitle = "";
-const buttonSize = "85%";
+// const buttonSize = "85%";
 
-const items = [
-    { title: "", body: "", className: "zero" },
-    { title: "¿Quién soy?", body: "Lorem", className: "one" },
-    { title: "Experiencia", body: "Lorem", className: "two" },
-    { title: "Estudios", body: "Lorem", className: "three" },
-];
+// const items = [
+//     { title: "", body: "", className: "zero" },
+//     { title: "¿Quién soy?", body: "Lorem", className: "one" },
+//     { title: "Experiencia", body: "Lorem", className: "two" },
+//     { title: "Estudios", body: "Lorem", className: "three" },
+// ];
 
-var positionItem = 0;
+// var positionItem = 0;
+
+// const [positionItem, setPositionItem] = useState(0);
 
 const primary = "#4d493e";
 const onPrimary = "#c8c2aa";
 ---
 
 <BaseLayout title={title} subtitle={subtitle}>
-    <div class="main">
+    <AboutmeContent client:load/>
+    <!-- <div class="main">
         <div class="buttons_column">
             {
                 items.map((item) => {
                     return (
                         item.title.length > 0 && (
-                            <ButtonNier text={item.title} size={buttonSize} className={item.className} />
+                            // <ButtonNier text={item.title} size={buttonSize} className={item.className} />
+                            <Button client:load className={item.className} value={item.title} positionItem={positionItem} setPositionItem={setPositionItem} />
                         )
                     );
                 })
             }
+            
         </div>
         <div class="text_content">
             <h3>{items[positionItem].title}</h3>
             <p>{items[positionItem].body}</p>
         </div>
-    </div>
+        
+    </div> -->
 </BaseLayout>
 
-<style define:vars={{ primary, onPrimary }}>
+<!-- <style define:vars={{ primary, onPrimary }}>
     .buttons_column {
         display: flex;
         flex-direction: column;
@@ -82,4 +91,4 @@ const onPrimary = "#c8c2aa";
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         }
     }
-</style>
+</style> -->
