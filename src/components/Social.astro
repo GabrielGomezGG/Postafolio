@@ -11,11 +11,11 @@ const { platform, username, icon } = Astro.props;
 ---
 
 {username.length < 6 ? 
-  <a href={platform}>
+  <a href={platform} target="_blank">
     <ButtonNier text={username} icon={icon} className="button_icon"/>
   </a> 
   :
-  <a href={`https://www.${platform}.com/${username}`}>
+  <a href={`https://www.${platform}.com/${username}`} target="_blank">
     <ButtonNier text={platform} icon={icon} className="button_icon"/>
   </a>
 }

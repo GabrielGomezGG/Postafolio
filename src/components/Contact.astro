@@ -15,16 +15,16 @@ const contact = [
             return <Social platform={item.platform} username={item.username} icon={item.icon}/>;
         })
     }
-    <a href="/gabrielgomezcv.pdf" download="gabrielgomezcv.pdf" }>
-        <ButtonNier text={"CV"} className="button_icon" icon={"/file-text.svg"}/>
+    <a href="/gabrielgomezcv.pdf" download="Gabriel Gomez CV.pdf" target="_blank">
+        <ButtonNier text={"CV"} className="button_icon" icon={"/file-text.svg"} />
     </a>
 </div>
 
 <style is:global>
 
-    .contacts button{
+    /* .contacts button{
         width: 90px;
-    }
+    } */
 
     @media (min-width: 1024px) {
         .contacts {
