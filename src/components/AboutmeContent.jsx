@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from "../components/Button.jsx";
 import ItemBody from './ItemBody.jsx';
 
 const items = [
     { title: "", body: "" },
-    { title: "¿Quién soy?", body: "titi" },
+    { title: "¿Quién soy?", body: "Saludos, me llamo Gabriel Gómez y cuento con más de ocho años de trayectoria en el ámbito de la programación. Mi interés por este campo surgió durante la secundaria, cuando asistí a una escuela técnica especializada en enseñanza de programación. Fue allí donde adquirí los fundamentos de lógica y programación básica que continúan siendo esenciales en mi día a día." },
     { title: "Experiencia", body: "nula" },
     { title: "Estudios", body: "si" },
 ];
@@ -22,8 +22,8 @@ const studies = [
 ]
 
 const aboutmeContent = [
-    experience ,
-    studies 
+    experience,
+    studies
 ]
 
 
@@ -46,17 +46,14 @@ function AboutmeContent() {
 
             <div className="text_content">
                 <h3>{items[positionItem].title}</h3>
-                
+
                 {positionItem > 1 ?
-                    aboutmeContent[positionItem-2].map((item, index) => {
-                        // console.log(item.subtitle + " " + item.body)
-                        return <ItemBody key={item.subtitle} subtitle={item.subtitle} text={item.body} index={aboutmeContent[positionItem-2].length} />
+                    aboutmeContent[positionItem - 2].map((item) => {
+                        return <ItemBody key={item.subtitle} subtitle={item.subtitle} text={item.body} index={aboutmeContent[positionItem - 2].length} />
                     })
-                    //<ItemBody subtitle={aboutmeContent[positionItem][0].subtitle} text="xxxxxxxxxxxx" />
                     : <p>{items[positionItem].body} </p>
                 }
             </div>
-
         </div>
 
     )

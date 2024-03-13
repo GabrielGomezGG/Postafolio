@@ -1,18 +1,31 @@
 ---
-const { text, size, className } = Astro.props;
+const { text, size, icon, className } = Astro.props;
 
-const buttonSize = size 
+const buttonSize = size;
+var iconSize = 0;
 
+if (icon) {
+    iconSize = icon.length;
+}
 ---
 
-<button type="button" class={className}>{text}</button>
+<button type="button">
+    <div class={className}>
+        {iconSize > 0 && <img class="icon"src={icon} alt={text} />}
+        <p class="button_text">{text}</p>
+    </div>
+</button>
 
-<style lang="scss" define:vars={{buttonSize}} is:global>
+<style lang="scss" define:vars={{ buttonSize }} is:global>
     $bgColor: #c8c2aa;
     $color: #4d493e;
 
-    .one:hover{
-        .two{
+    .icon{
+        box-shadow: none;
+    }
+
+    .one:hover {
+        .two {
             background-color: red;
         }
     }
@@ -31,6 +44,10 @@ const buttonSize = size
         border-right: none;
         margin: 0.5rem;
         width: var(--buttonSize);
+
+        p{
+            margin: 0;
+        }
 
         &::before {
             content: "";
@@ -56,8 +73,7 @@ const buttonSize = size
         }
 
         &:hover,
-        &:focus 
-        {
+        &:focus {
             background-color: transparent;
             color: $bgColor;
             border-color: $color;

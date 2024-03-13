@@ -3,24 +3,29 @@ import Social from "./Social.astro";
 import ButtonNier from "./ButtonNier.astro";
 
 const contact = [
-    { platform: "Linkedin", username: "in/gabrielgomezgg/" },
-    { platform: "Github", username: "gabrielgomezgg" },
-    { platform: "mailto:gabrielgomezgg1997@gmail.com", username: "Email" },
+    { platform: "Linkedin", username: "in/gabrielgomezgg/", icon: "/linkedin.svg"},
+    { platform: "Github", username: "gabrielgomezgg", icon: "/github.svg" },
+    { platform: "mailto:gabrielgomezgg1997@gmail.com", username: "Email", icon: "/mail.svg" },
 ];
 ---
 
 <div class="contacts">
     {
         contact.map((item) => {
-            return <Social platform={item.platform} username={item.username} />;
+            return <Social platform={item.platform} username={item.username} icon={item.icon}/>;
         })
     }
     <a href="/gabrielgomezcv.pdf" download="gabrielgomezcv.pdf" }>
-        <ButtonNier text={"CV"} />
+        <ButtonNier text={"CV"} className="button_icon" icon={"/file-text.svg"}/>
     </a>
 </div>
 
-<style>
+<style is:global>
+
+    .contacts button{
+        width: 90px;
+    }
+
     @media (min-width: 1024px) {
         .contacts {
             display: flex;

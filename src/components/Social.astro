@@ -4,21 +4,19 @@ import ButtonNier from "./ButtonNier.astro";
 interface Props {
   platform: string;
   username: string;
+  icon: string;
 }
 
-const { platform, username } = Astro.props;
-
-const url = "https://www.${platform}.com/${username}"
+const { platform, username, icon } = Astro.props;
 ---
 
-<!-- <a href={`https://www.${platform}.com/${username}`}>{platform}</a> -->
 {username.length < 6 ? 
   <a href={platform}>
-    <ButtonNier text={username} />
+    <ButtonNier text={username} icon={icon} className="button_icon"/>
   </a> 
   :
   <a href={`https://www.${platform}.com/${username}`}>
-    <ButtonNier text={platform} />
+    <ButtonNier text={platform} icon={icon} className="button_icon"/>
   </a>
 }
 

@@ -1,26 +1,35 @@
-:root{
+:root {
   --primary: #4d493e;
   --onPrimary: #c8c2aa;
 }
 
-.content button{
+.icon{
+  position: relative;
+  bottom: 1px;
+}
+
+.button_icon {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  p{
+    margin: 0;
+  }
+}
+
+.content button {
   width: 80%;
 }
 
-.buttons_column {
-  display: flex;
-  flex-direction: column;
-  /* background-color: green; */
-  align-items: center;
-  padding-bottom: 16px;
-}
-
-hr{
+hr {
   margin-inline: 8px 8px;
   border: 1px solid var(--primary);
 }
 
-.subtitle_content{
+.subtitle_content {
   font-weight: 600;
 }
 
@@ -35,38 +44,39 @@ hr{
   overflow: auto;
 
   ::-webkit-scrollbar {
-        width: 10px;
-    }
+    width: 10px;
+  }
 
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
 
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-    }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
-    /* Estilos para la barra de desplazamiento en Firefox */
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) var(--onPrimary);
+  /* Estilos para la barra de desplazamiento en Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--onPrimary);
 
   h3 {
-      margin: 0;
-      padding: 8px 0px 8px 8px;
-      background-color: var(--primary);
-      color: var(--onPrimary);
-      min-height: 22px;
+    margin: 0;
+    padding: 8px 0px 8px 8px;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    min-height: 22px;
   }
 
   p {
-      margin: 8px;
-      color: var(--primary);
+    margin: 8px;
+    color: var(--primary);
   }
-  .body_content{
+
+  .body_content {
     padding-bottom: 32px;
   }
 }
@@ -79,6 +89,6 @@ hr{
 
 @media (min-width: 1024px) {
   .main {
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
