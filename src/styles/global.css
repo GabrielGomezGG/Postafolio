@@ -12,8 +12,17 @@
   flex-direction: column;
   /* background-color: green; */
   align-items: center;
+  padding-bottom: 16px;
 }
 
+hr{
+  margin-inline: 8px 8px;
+  border: 1px solid var(--primary);
+}
+
+.subtitle_content{
+  font-weight: 600;
+}
 
 
 .text_content {
@@ -23,6 +32,27 @@
   border: 2px solid var(--primary);
   justify-self: center;
   /* margin: 0px 16px 16px 16px; */
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    /* Estilos para la barra de desplazamiento en Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--onPrimary);
 
   h3 {
       margin: 0;
@@ -35,6 +65,9 @@
   p {
       margin: 8px;
       color: var(--primary);
+  }
+  .body_content{
+    padding-bottom: 32px;
   }
 }
 

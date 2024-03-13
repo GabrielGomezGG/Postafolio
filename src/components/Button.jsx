@@ -1,8 +1,7 @@
-function Button({className, value, positionItem, setPositionItem, index}) {
-
+function Button({ title, setPositionItem, index }) {
     return (
         <>
-            <button className={className} onClick={() => setPositionItem(index)}>{value}</button>
+            <button onClick={() => setPositionItem(index)}>{title}</button>
         </>
     )
 }
