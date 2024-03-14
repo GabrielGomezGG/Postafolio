@@ -2,35 +2,15 @@ import { useState } from 'react';
 import Button from "../components/Button.jsx";
 import ItemBody from './ItemBody.jsx';
 
-const items = [
-    { title: "", body: "" },
-    { title: "¿Quién soy?", body: "Saludos, me llamo Gabriel Gómez y cuento con más de ocho años de trayectoria en el ámbito de la programación. Mi interés por este campo surgió durante la secundaria, cuando asistí a una escuela técnica especializada en enseñanza de programación. Fue allí donde adquirí los fundamentos de lógica y programación básica que continúan siendo esenciales en mi día a día." },
-    { title: "Experiencia", body: "nula" },
-    { title: "Estudios", body: "si" },
-];
-
-
-
-const experience = [
-    { subtitle: "May 2016 - Oct 2016 | Prácticas Profesionalizantes | Universidad Nacional De La Matanza", body: "Estudié en la Universidad Nacional de La Matanza la carrera de Ingeniería en Informática. Me recibí en 2020." },
-]
-
-const studies = [
-    { subtitle: "2020 - Actualidad | Universidad Nacional De La Matanza", body: "Tecnicatura en Desarrollo de Aplicaciones Móviles" },
-    { subtitle: "2017 - 2018 | Curso 111 Mil Programadores", body: "Analista del conocimiento" },
-    { subtitle: "2012 - 2016 | Escuela De Educación Secundaria Técnica N° 14", body: "Técnico en Programación." },
-]
-
-const aboutmeContent = [
-    experience,
-    studies
-]
-
-
-
-function AboutmeContent() {
+function AboutmeContent({items, aboutmeContent = []}) {
 
     const [positionItem, setPositionItem] = useState(0);
+
+    var bodySize = 0;
+
+    if(items[positionItem]){
+        bodySize = items[positionItem].body.length;
+    }
 
     return (
         <div className="main">
@@ -47,8 +27,8 @@ function AboutmeContent() {
             <div className="text_content">
                 <h3>{items[positionItem].title}</h3>
 
-                {positionItem > 1 ?
-                    aboutmeContent[positionItem - 2].map((item) => {
+                {bodySize < 1 ?
+                    aboutmeContent[positionItem - 2]?.map((item) => {
                         return <ItemBody key={item.subtitle} subtitle={item.subtitle} text={item.body} index={aboutmeContent[positionItem - 2].length} />
                     })
                     : <p>{items[positionItem].body} </p>

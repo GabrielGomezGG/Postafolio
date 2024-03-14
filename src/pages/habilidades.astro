@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutmeContent from "../components/AboutmeContent.jsx";
+
+const title = "Habilidades";
+const subtitle = "";
+
+const items = [
+    { title: "", body: "" },
+    { title: "Android", body: "asdasda" },
+    { title: "Backend", body: "asdsadsadsa" },
+    { title: "Frontend", body: "asdasdsadsa" },
+];
+---
+
+<BaseLayout title={title} subtitle={subtitle}>
+    <AboutmeContent client:load/ items={items}>
+</BaseLayout>
