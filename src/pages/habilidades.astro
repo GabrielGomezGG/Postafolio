@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AboutmeContent from "../components/AboutmeContent.jsx";
-
-import ButtonNier from "../components/ButtonNier.astro";
+import ItemsButton from "../components/ItemsButton.astro";
 
 const buttonSize = "100px";
 
@@ -20,19 +18,8 @@ const skills = [
 ---
 
 <BaseLayout title={title} subtitle={subtitle}>
-    <!-- <AboutmeContent client:load/ items={items}> -->
         <div class="main">
-            <div class="buttons_column">
-                {
-                    skills.map((item) => (
-                        <a href={"#"+item.className} >
-                            <button>
-                                {item.title}
-                            </button>
-                        </a>
-                    ))
-                }
-            </div>
+            <ItemsButton items={skills} />
             {
                 skills.map((item) => (
                         <div class="text_content" id={item.className}>

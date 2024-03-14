@@ -1,0 +1,15 @@
+---
+const { items } = Astro.props
+---
+
+<div class="buttons_column">
+    {
+        items.map((item: { className: string; title: string }) => (
+            <a href={"#"+item.className} >
+                <button>
+                    {item.title}
+                </button>
+            </a>
+        ))
+    }
+</div>
