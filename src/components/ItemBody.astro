@@ -1,0 +1,18 @@
+---
+const { items } = Astro.props;
+---
+
+{
+    items.map((item: { className: string; title: string; body: string; largeBody: any[] | null}) => (
+        <div class="text_content" id={item.className}>
+            <h3>{item.title}</h3>
+            {
+                item.largeBody ? item.largeBody.map((largeBodyItem: { subtitle: unknown; body: unknown; }) => (
+                    <p class="subtitle_content">{largeBodyItem.subtitle}</p>
+                    <hr />
+                    <p class="body_content">{largeBodyItem.body}</p>
+                )) : <p>{item.body}</p>
+            }
+        </div>
+    ))
+}

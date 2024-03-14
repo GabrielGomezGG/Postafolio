@@ -1,0 +1,15 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ItemsButton from '../components/ItemsButton.astro';
+import ItemBody from '../components/ItemBody.astro';
+
+
+const { title, subtitle, items} = Astro.props;
+---
+
+<BaseLayout title={title} subtitle={subtitle}>
+    <div class="main">
+        <ItemsButton items={items} />
+        <ItemBody items={items} />
+    </div>
+</BaseLayout>

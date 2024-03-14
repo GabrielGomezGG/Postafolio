@@ -1,20 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import AboutmeContent from "../components/AboutmeContent.jsx";
+import BaseLayoutWithItems from "../layouts/BaseLayoutWithItems.astro";
 
 const title = "Sobre mi";
 const subtitle = "";
-
-const items = [
-    { title: "", body: "" },
-    { title: "¿Quién soy?", body: "Saludos, me llamo Gabriel Gómez y cuento con más de ocho años de trayectoria en el ámbito de la programación.\nMi interés por este campo surgió durante la secundaria, cuando asistí a una escuela técnica especializada en enseñanza de programación. Fue allí donde adquirí los fundamentos de lógica y programación básica que continúan siendo esenciales en mi día a día." },
-    { title: "Experiencia", body: "" },
-    { title: "Estudios", body: "" },
-];
-
-
-
-
 
 const experience = [
     { subtitle: "May 2016 - Oct 2016 | Prácticas Profesionalizantes | Universidad Nacional De La Matanza", body: "Estudié en la Universidad Nacional de La Matanza la carrera de Ingeniería en Informática. Me recibí en 2020." },
@@ -26,12 +14,25 @@ const studies = [
     { subtitle: "2012 - 2016 | Escuela De Educación Secundaria Técnica N° 14", body: "Técnico en Programación." },
 ]
 
-const aboutmeContent = [
-    experience,
-    studies
-]
+const items = [
+    { 
+        title: "¿Quién soy?", 
+        className:"button1", 
+        body: "Saludos, me llamo Gabriel Gómez y cuento con más de ocho años de trayectoria en el ámbito de la programación.\nMi interés por este campo surgió durante la secundaria, cuando asistí a una escuela técnica especializada en enseñanza de programación. Fue allí donde adquirí los fundamentos de lógica y programación básica que continúan siendo esenciales en mi día a día.",
+        largeBody: null
+    },
+    { 
+        title: "Experiencia", 
+        className:"button2", 
+        body: "",
+        largeBody: experience
+    },
+    { 
+        title: "Estudios", 
+        className:"button3", 
+        body: "",
+        largeBody: studies
+    },
+];
 ---
-
-<BaseLayout title={title} subtitle={subtitle}>
-    <AboutmeContent client:load/ items={items} aboutmeContent={aboutmeContent}>
-</BaseLayout>
+<BaseLayoutWithItems title={title} subtitle={subtitle} items={items} />

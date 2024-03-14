@@ -1,33 +1,40 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ItemsButton from "../components/ItemsButton.astro";
-
-const buttonSize = "100px";
+import BaseLayoutWithItems from "../layouts/BaseLayoutWithItems.astro";
 
 const title = "Habilidades";
 const subtitle = "";
 
 const skills = [
-{ title: "Android", className: "button1", body: "Kotlin | Android SDK | Jetpack Compose | View XML | Kotlin Multiplatform | MVVM | MVP | Retrofit | OkHTTP | Ktor Client | Junit | Mockk | MockWebServer | Apollo Client" },
-{ title: "Backend", className: "button2", body: "Java | Spring Boot | Spring REST | Spring Data | Spring MVC" },
-{ title: "Frontend", className: "button3", body: "React | Astro | JavaScript | HTML | CSS" },
-{ title: "Herramientas", className: "button4", body: "Docker | Git | Github | SCRUM | Postman | Figma | UML" },
-{ title: "Base de Datos", className: "button5", body: "SQL | MySQL | SQL Server | MongoDB" },
-{ title: "Habilidades Blandas", className: "button6", body: "Proactivo | Adaptabilidad | Trabajo en equipo | Comunicación | Responsabilidad | Flexibilidad" },
+    {
+        title: "Android",
+        className: "button1",
+        body: "Kotlin | Android SDK | Jetpack Compose | View XML | Kotlin Multiplatform | MVVM | MVP | Retrofit | OkHTTP | Ktor Client | Junit | Mockk | MockWebServer | Apollo Client",
+    },
+    {
+        title: "Backend",
+        className: "button2",
+        body: "Java | Spring Boot | Spring REST | Spring Data | Spring MVC",
+    },
+    {
+        title: "Frontend",
+        className: "button3",
+        body: "React | Astro | JavaScript | HTML | CSS",
+    },
+    {
+        title: "Herramientas",
+        className: "button4",
+        body: "Docker | Git | Github | SCRUM | Postman | Figma | UML",
+    },
+    {
+        title: "Base de Datos",
+        className: "button5",
+        body: "SQL | MySQL | SQL Server | MongoDB",
+    },
+    {
+        title: "Habilidades Blandas",
+        className: "button6",
+        body: "Proactivo | Adaptabilidad | Trabajo en equipo | Comunicación | Responsabilidad | Flexibilidad",
+    },
 ];
 ---
-
-<BaseLayout title={title} subtitle={subtitle}>
-        <div class="main">
-            <ItemsButton items={skills} />
-            {
-                skills.map((item) => (
-                        <div class="text_content" id={item.className}>
-                                <h3>{item.title}</h3>
-                                <p>{item.body}</p>
-                        </div>
-                    ))
-                }
-        </div>
-
-</BaseLayout>
+<BaseLayoutWithItems title={title} subtitle={subtitle} items={skills} />
