@@ -1,0 +1,46 @@
+---
+import ItemProject from "../components/ItemProject.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Proyectos";
+const subtitle = "";
+
+const projects = [
+    {
+        title: "Proyecto 1",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore enim saepe at quis exercitationem quia molestias sed ex minus? Veniam, delectus ea debitis neque doloremque earum eius maxime dolorum officiis!",
+        image: "https://via.placeholder.com/300",
+        link: "/proyecto-1"
+    },
+    {
+        title: "Proyecto 2",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore enim saepe at quis exercitationem quia molestias sed ex minus? Veniam, delectus ea debitis neque doloremque earum eius maxime dolorum officiis!",
+        image: "https://via.placeholder.com/300",
+        link: "/proyecto-2"
+    },
+    {
+        title: "Proyecto 3",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore enim saepe at quis exercitationem quia molestias sed ex minus? Veniam, delectus ea debitis neque doloremque earum eius maxime dolorum officiis!",
+        image: "https://via.placeholder.com/300",
+        link: "/proyecto-3"
+    }
+];
+---
+<BaseLayout title={title} subtitle={subtitle}>
+    <div class="projects">
+        {
+            projects.map((project) => (
+                <ItemProject project={project} />
+            ))
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .projects {
+        padding-left: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+</style>
+
