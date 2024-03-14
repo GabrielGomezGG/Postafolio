@@ -89,6 +89,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 12px;
 
 }
 
@@ -96,6 +97,28 @@ hr {
   /* background-color: yellow; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Skills Style */
+
+/* Arreglar Para Sobre mi */
+.text_content{
+  display: none;
+}
+
+.main{
+  a{
+    width: 95%;
+  }
+}
+
+#button1:target,
+#button2:target,
+#button3:target,
+#button4:target,
+#button5:target,
+#button6:target{
+  display: block;
 }
 
 @media (min-width: 1024px) {
