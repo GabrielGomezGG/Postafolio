@@ -56,8 +56,12 @@ const { project } = Astro.props;
         img {
             width: 90%;
             background-color: var(--primary);
-            box-shadow: none;
+            /* box-shadow: none; */
             margin: 8px;
+        }
+
+        hr{
+            margin-block: 16px;
         }
 
         .p_tecnologies {
@@ -85,7 +89,13 @@ const { project } = Astro.props;
 
     .card_project:hover{
         box-shadow: 6px 6px 0 rgba(76, 72, 61, 0.6);
-        transform: scale(1.05);
+        transform: scale(1.03);
         
+    }
+
+    @media (width > 1024px) {
+        .card_project {
+            flex-direction: row;
+        }
     }
 </style>

@@ -8,22 +8,22 @@ const subtitle = "";
 const projects = [
     {
         title: "TripOut",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore enim saepe at quis exercitationem quia molestias sed ex minus? Veniam, delectus ea debitis neque doloremque earum eius maxime dolorum officiis!",
+        description: "TripOut es tu compañero de viaje personal, donde puedes planificar, compartir y descubrir nuevas aventuras. Crea fácilmente viajes personalizados, desde el destino hasta la fecha, compártelos con amigos y familiares, y recibe recomendaciones de viajes cercanos para ampliar tus horizontes.",
         tecnologies: ["Kotlin", "Android", "Google Maps Api", "Coroutines", "Retrofit", "Material Design", "Clean Architecture", "MVVM", "Repository Pattern", "Dependency Injection", "Unit Testing"],
         image: "https://via.placeholder.com/300",
         link: "https://github.com/GabrielGomezGG/TripOut"
     },
     {
-        title: "TripOut",
+        title: "Lorem Ipsum",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore enim saepe at quis exercitationem quia molestias sed ex minus? Veniam, delectus ea debitis neque doloremque earum eius maxime dolorum officiis!",
-        tecnologies: [""],
+        tecnologies: ["Sample", "Text"],
         image: "https://via.placeholder.com/300",
         link: "https://github.com/GabrielGomezGG/TripOut"
     },
     {
-        title: "TripOut",
+        title: "Lorem Ipsum",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore enim saepe at quis exercitationem quia molestias sed ex minus? Veniam, delectus ea debitis neque doloremque earum eius maxime dolorum officiis!",
-        tecnologies: [""],
+        tecnologies: ["Sample", "Text"],
         image: "https://via.placeholder.com/300",
         link: "https://github.com/GabrielGomezGG/TripOut"
     },
@@ -46,6 +46,16 @@ const projects = [
         padding-left: 1rem;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    @media (width > 1024px) {
+        .projects {
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: none;
+        }
     }
 </style>
 
