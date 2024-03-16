@@ -1,6 +1,7 @@
 :root {
   --primary: #4d493e;
   --onPrimary: #c8c2aa;
+  --buttonColor: rgba(77, 73, 62, 0.35);
 }
 
 .icon{
