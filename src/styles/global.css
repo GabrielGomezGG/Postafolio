@@ -41,7 +41,7 @@ hr {
 
 .text_content {
   width: 90%;
-  height: 50vh;
+  height: 30vh;
   /* background-color: #cdcaa8; */
   border: 2px solid var(--primary);
   justify-self: center;
@@ -98,6 +98,7 @@ hr {
   /* background-color: yellow; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
 }
 
 /* Skills Style */
