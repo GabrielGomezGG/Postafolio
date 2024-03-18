@@ -5,7 +5,7 @@ import Content from "../components/Content.astro";
 import Title from "../components/Title.astro";
 import '../styles/global.css';
 
-const {title, subtitle} = Astro.props;
+// const {title, subtitle} = Astro.props;
 const pageTitle = "Gabriel Gomez";
 ---
 
@@ -20,12 +20,12 @@ const pageTitle = "Gabriel Gomez";
 	<body>
 		<Header />
 		<main>
-			<Title title={title} subtitle={subtitle} />
-			<Content>
+			<!-- <Title title={title} subtitle={subtitle} /> -->
+			<!-- <Content> -->
 				<slot />
-			</Content>
+			<!-- </Content> -->
 		</main>
-		<Pattern />
+		<!-- <Pattern /> -->
 	</body>
 </html>
 
@@ -73,6 +73,9 @@ const pageTitle = "Gabriel Gomez";
 		min-height: 100vh;
 		letter-spacing: $letterSpacing;
 	}
+	h3{
+		margin: 0;
+	}
 
 	h1 {
 		text-transform: uppercase;
@@ -108,7 +111,7 @@ const pageTitle = "Gabriel Gomez";
 			rgba($color, 0.2) 23px,
 			transparent 23px
 		);
-		margin-bottom: 2rem;
+		margin-bottom: 10rem;
 		min-height: 55vh;
 	}
 
@@ -120,8 +123,8 @@ const pageTitle = "Gabriel Gomez";
 		display: flex;
 		flex-direction: column;
 		padding-left: 1rem;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
+		// margin-top: 1rem;
+		margin-bottom: 2rem;
 	}
 
 	@media (min-width: 600px) {

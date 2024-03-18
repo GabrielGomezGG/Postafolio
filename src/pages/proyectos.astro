@@ -1,6 +1,6 @@
 ---
+import Content from "../components/Content.astro";
 import ItemProject from "../components/ItemProject.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Proyectos";
 const subtitle = "";
@@ -31,7 +31,7 @@ const projects = [
     
 ];
 ---
-<BaseLayout title={title} subtitle={subtitle}>
+<Content title={title} subtitle={subtitle}>
     <div class="projects">
         {
             projects.map((project) => (
@@ -39,7 +39,7 @@ const projects = [
             ))
         }
     </div>
-</BaseLayout>
+</Content>
 
 <style>
     .projects {

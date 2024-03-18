@@ -1,15 +1,15 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import ItemsButton from '../components/ItemsButton.astro';
-import ItemBody from '../components/ItemBody.astro';
+import BaseLayout from "./BaseLayout.astro";
+import ItemsButton from "../components/ItemsButton.astro";
+import ItemBody from "../components/ItemBody.astro";
+import Content from "../components/Content.astro";
 
-
-const { title, subtitle, items} = Astro.props;
+const { title, items } = Astro.props;
 ---
 
-<BaseLayout title={title} subtitle={subtitle}>
+<Content title={title}>
     <div class="main">
-        <ItemsButton items={items} />
+        <!-- <ItemsButton items={items} /> -->
         <ItemBody items={items} />
     </div>
-</BaseLayout>
+</Content>

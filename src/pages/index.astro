@@ -1,44 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Contact from "../components/Contact.astro";
+import Home from "../components/Home.astro";
+import Habilidades from "./habilidades.astro";
+import Sobremi from "./sobremi.astro";
+import Proyectos from "./proyectos.astro";
 
-const pageTitle = "Gabriel Gomez";
-const rol = "- Desarrollador Android";
-const body1 =
-    "Con más de dos años de experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin y Android SDK, así como habilidades en el backend con Java y Spring Boot.";
-const body2 =
-    "Actualmente, me encuentro finalizando la Tecnicatura en Desarrollo de Aplicaciones Móviles en la Universidad Nacional de La Matanza (UNLaM).";
+
 ---
 
-<BaseLayout title={pageTitle} subtitle={rol}>
+<BaseLayout>
     
-        <div class="main">
-            
-            <p>{body1}<br>{body2}</p>
-            <img src="/favicon.svg" alt="Profile" />
+        <Home/>
+        <Proyectos />
+        <Habilidades />
+        <Sobremi/>
 
-            <Contact />
-        </div>
 </BaseLayout>
 
-<style>
-    .main {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 10px;
-        margin-left: 16px;
-        margin-right: 16px;
-    }
 
-    img {
-        width: 300px;
-        height: 300px;
-        justify-self: center;
-    }
-
-    @media (min-width: 1024px) {
-        .main {
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        }
-    }
-</style>
