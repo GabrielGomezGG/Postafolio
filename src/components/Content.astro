@@ -2,10 +2,10 @@
 import Pattern from "./Pattern.astro";
 import Title from "./Title.astro";
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, id } = Astro.props;
 ---
 
-<Title title={title} subtitle={subtitle} />
+<Title title={title} subtitle={subtitle} id={id} />
 <div class="content">
     <slot />
 </div>

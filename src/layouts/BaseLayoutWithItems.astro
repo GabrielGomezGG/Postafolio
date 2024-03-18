@@ -4,11 +4,11 @@ import ItemsButton from "../components/ItemsButton.astro";
 import ItemBody from "../components/ItemBody.astro";
 import Content from "../components/Content.astro";
 
-const { title, items } = Astro.props;
+const { title, items, id } = Astro.props;
 ---
 
-<Content title={title}>
-    <div class="main">
+<Content title={title} id={id}>
+    <div class="main" id={id}>
         <!-- <ItemsButton items={items} /> -->
         <ItemBody items={items} />
     </div>
