@@ -41,7 +41,7 @@ hr {
 
 .text_content {
   width: 90%;
-  height: 30vh;
+  /* height: 30vh; */
   /* background-color: #cdcaa8; */
   border: 2px solid var(--primary);
   justify-self: center;

@@ -1,5 +1,7 @@
 ---
-const { items } = Astro.props;
+const { items, itemHeight = "26vh"} = Astro.props;
+
+const height = itemHeight
 ---
 
 {
@@ -16,3 +18,9 @@ const { items } = Astro.props;
         </div>
     ))
 }
+
+<style define:vars={{ itemHeight }} is:global>
+    .text_content {
+        height: var(--itemHeight);
+    }
+</style>
