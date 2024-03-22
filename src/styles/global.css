@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary: #4d493e;
   --onPrimary: #c8c2aa;
