@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Pattern from "../components/Pattern.astro";
 import Content from "../components/Content.astro";
 import Title from "../components/Title.astro";
-import '../styles/global.css';
+import "../styles/global.css";
 
 // const {title, subtitle} = Astro.props;
 const pageTitle = "Gabriel Gomez";
@@ -17,18 +17,23 @@ const pageTitle = "Gabriel Gomez";
 		<meta name="generator" content={Astro.generator} />
 		<meta name="author" content="Gabriel Gomez" />
 		<meta name="description" content="Gabriel Gomez - Android developer" />
-		<meta name="keywords" content="android, developer, kotlin, java, android studio, firebase, firestore, android developer, android development, android app, android app development, android app developer, android app development company, android app development services, android app development tools, android app development software, android app development platform, android app development cost" />
+		<meta
+			name="keywords"
+			content="android, developer, kotlin, java, android studio, firebase, firestore, android developer, android development, android app, android app development, android app developer, android app development company, android app development services, android app development tools, android app development software, android app development platform, android app development cost"
+		/>
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<!-- <Header /> -->
 		<main>
-			<!-- <Title title={title} subtitle={subtitle} /> -->
-			<!-- <Content> -->
-				<slot />
-			<!-- </Content> -->
+			<a href="#home">
+				<img src="/rombo.png" alt="rombo" id="rombo">
+			</a>
+			<slot />
 		</main>
-		<!-- <Pattern /> -->
+
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
 
@@ -76,7 +81,7 @@ const pageTitle = "Gabriel Gomez";
 		min-height: 100vh;
 		letter-spacing: $letterSpacing;
 	}
-	h3{
+	h3 {
 		margin: 0;
 	}
 
@@ -127,6 +132,15 @@ const pageTitle = "Gabriel Gomez";
 		flex-direction: column;
 		padding-left: 1rem;
 		// margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	#rombo{
+		box-shadow: none;
+		position: fixed;
+		bottom: 0;
+    	right: 0;
+		margin-right: 4rem;
 		margin-bottom: 2rem;
 	}
 
