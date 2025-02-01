@@ -7,37 +7,62 @@ const subtitle = "";
 
 const projects = [
     {
+        isPlayStore: true,
+        title: "Spora: Guardián del Bosque",
+        description:
+            "Spora es una app educativa para niños y niñas que enseña sobre sustentabilidad y el cuidado del medio ambiente de una manera divertida. Acompañá a Champy y Mushy en una emocionante aventura, llena de minijuegos, desafíos, y actividades para aprender cómo proteger la naturaleza mientras te diviertís. ¡Unite a Spora y ayudá a crear un mundo más verde!",
+        tecnologies: [
+            "Kotlin",
+            "Android",
+            "Firebase",
+            "TensorFlow",
+            "Jetpack Compose",
+            "Coroutines",
+            "Retrofit",
+            "Material Design",
+            "Clean Architecture",
+            "MVVM",
+            "Repository Pattern",
+            "Dependency Injection",
+        ],
+        image: "/spora.png",
+        link: "https://play.google.com/store/apps/details?id=com.gg.spora",
+    },
+    {
+        isPlayStore: false,
         title: "TripOut",
-        description: "TripOut es tu compañero de viaje personal, donde puedes planificar, compartir y descubrir nuevas aventuras. Crea fácilmente viajes personalizados, desde el destino hasta la fecha, compártelos con amigos y familiares, y recibe recomendaciones de viajes cercanos para ampliar tus horizontes.",
-        tecnologies: ["Kotlin", "Android","Jetpack Compose", "Google Maps Api", "Coroutines", "Retrofit", "Material Design", "Clean Architecture", "MVVM", "Repository Pattern", "Dependency Injection", "Unit Testing"],
+        description:
+            "TripOut es tu compañero de viaje personal, donde puedes planificar, compartir y descubrir nuevas aventuras. Crea fácilmente viajes personalizados, desde el destino hasta la fecha, compártelos con amigos y familiares, y recibe recomendaciones de viajes cercanos para ampliar tus horizontes.",
+        tecnologies: [
+            "Kotlin",
+            "Android",
+            "Jetpack Compose",
+            "Google Maps Api",
+            "Coroutines",
+            "Retrofit",
+            "Material Design",
+            "Clean Architecture",
+            "MVVM",
+            "Repository Pattern",
+            "Dependency Injection",
+            "Unit Testing",
+        ],
         image: "/trip_out.webp",
-        link: "https://github.com/GabrielGomezGG/TripOut"
+        link: "https://github.com/GabrielGomezGG/TripOut",
     },
-    {
-        title: "Say GG",
-        description: "Say GG es una aplicación que te conecta con la emoción de los torneos de videojuegos. Utilizando la API de GraphQL de start.gg, te permite buscar torneos, recibir recomendaciones basadas en tu ubicación actual y explorar detalles de cada torneo. Say GG te ofrece una experiencia personalizada y segura para disfrutar al máximo del mundo de los eSports.",
-        tecnologies: ["Kotlin", "Android", "Jetpack Compose", "GraphQL", "Apollo Client", "Dependency Injection", "MVVM", "Repository Pattern", "Coil", "Material Design", "Clean Architecture"],
-        image: "/startgg.webp",
-        link: "https://github.com/GabrielGomezGG/SayGG"
-    },
-    {
-        title: "GameApp",
-        description: "App que muestra un listado de juegos gratis para todas las plataformas. Contiene 2 minijuegos: “QuizGame” y “Who game?”",
-        tecnologies: ["Kotlin", "Android", "Jetpack Compose", "Coroutines", "Retrofit", "Material Design", "Clean Architecture", "MVVM", "Repository Pattern", "Dependency Injection", "Fragment", "ViewBinding"],
-        image: "/game_app.webp",
-        link: "https://github.com/GabrielGomezGG/TripOut"
-    },
-    
-    
+    // {
+    //     title: "Say GG",
+    //     description: "Say GG es una aplicación que te conecta con la emoción de los torneos de videojuegos. Utilizando la API de GraphQL de start.gg, te permite buscar torneos, recibir recomendaciones basadas en tu ubicación actual y explorar detalles de cada torneo. Say GG te ofrece una experiencia personalizada y segura para disfrutar al máximo del mundo de los eSports.",
+    //     tecnologies: ["Kotlin", "Android", "Jetpack Compose", "GraphQL", "Apollo Client", "Dependency Injection", "MVVM", "Repository Pattern", "Coil", "Material Design", "Clean Architecture"],
+    //     image: "/startgg.webp",
+    //     link: "https://github.com/GabrielGomezGG/SayGG"
+    // },
 ];
 ---
+
 <Content title={title} subtitle={subtitle} id="projects">
     <div class="projects">
-        {
-            projects.map((project) => (
-                <ItemProject project={project} />
-            ))
-        }
+        {projects.map((project) => <ItemProject project={project} />)}
     </div>
 </Content>
 
@@ -58,4 +83,3 @@ const projects = [
         }
     }
 </style>
-

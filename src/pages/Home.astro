@@ -1,19 +1,21 @@
 ---
 import Contact from "../components/Contact.astro";
 import Content from "../components/Content.astro";
+import ImageGlitch from "../components/ImageGlitch.astro";
 
 const pageTitle = "Gabriel Gomez";
 const rol = "- Desarrollador Android";
-const body1 =
-    "Con más de dos años de experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin y Android SDK, así como habilidades en el backend con Java y Spring Boot.";
-const body2 =
-    "Actualmente, me encuentro finalizando la Tecnicatura en Desarrollo de Aplicaciones Móviles en la Universidad Nacional de La Matanza (UNLaM).";
+// const body1 =
+//     "Con más de dos años de experiencia en el desarrollo de aplicaciones móviles para Android utilizando Kotlin y Android SDK, así como habilidades en el backend con Java y Spring Boot.";
+// const body2 =
+//     "Actualmente, me encuentro finalizando la Tecnicatura en Desarrollo de Aplicaciones Móviles en la Universidad Nacional de La Matanza (UNLaM).";
 
 ---
 <Content title={pageTitle} subtitle={rol}>
     <div class="main" >
-        <p>{body1}<br />{body2}</p>
-        <img src="/favicon.svg" alt="Profile" />
+        <!-- <p>{body1}<br />{body2}</p> -->
+        <!-- <img src="/gg.png" alt="Profile" /> -->
+        <ImageGlitch image = {"/gg.png"}/>
         
         <Contact  />
     </div>
@@ -21,9 +23,13 @@ const body2 =
 
 <style>
     .main {
-        display: grid;
+        /* display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 10px;
+        gap: 10px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; 
         margin-left: 16px;
         margin-right: 16px;
     }
@@ -36,7 +42,7 @@ const body2 =
 
     @media (min-width: 1024px) {
         .main {
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */
         }
     }
 </style>

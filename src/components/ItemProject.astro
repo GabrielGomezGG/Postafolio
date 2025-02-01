@@ -5,7 +5,10 @@ const { project } = Astro.props;
 <a href={project.link} target="_blank">
     <div class="card_project">
         <div class="content_project">
-            <h3>{project.title}</h3>
+            <div class="card_title">
+                <h3>{project.title}</h3>
+                { project.isPlayStore && <img src="/play_store.png" alt="play store" />}
+            </div>
             <p>
                 {project.description}
             </p>
@@ -37,12 +40,19 @@ const { project } = Astro.props;
         transition-property: box-shadow, transform;
         transition: 0.3s ease-in-out;
 
-        h3 {
-            margin: 0;
-            padding: 8px 0px 8px 8px;
-            background-color: var(--primary);
-            color: var(--onPrimary);
-            min-height: 22px;
+        .card_title {
+            h3{
+                margin: 0;
+                padding: 8px 0px 8px 8px;
+                background-color: var(--primary);
+                color: var(--onPrimary);
+                min-height: 22px;
+            }
+
+            img {
+                width: 120px;
+                height: 40px;
+            }
         }
 
         p {
@@ -56,8 +66,8 @@ const { project } = Astro.props;
 
         img {
             width: 90%;
-            height: 300px;
-            background-color: var(--primary);
+            /* height: 300px; */
+            /* background-color: var(--primary); */
             /* box-shadow: none; */
             margin: 8px;
             align-self: center;
@@ -82,7 +92,7 @@ const { project } = Astro.props;
             flex-wrap: wrap;
             li {
                 margin: 4px;
-                padding: 4px;
+                padding: 6px;
                 background-color: var(--primary);
                 color: var(--onPrimary);
                 border-radius: 4px;
